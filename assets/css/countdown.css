@@ -1,0 +1,56 @@
+
+.clock {
+  display: block;
+  margin: -20px 0 10px auto;
+  width: 250px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+  .clock div {
+      color:#555;
+      display: inline-block;
+      margin: 5px 0 3px 10px;
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 50%;
+  }
+  .clock div[data-value*="days"]:after, 
+  .clock div[data-value*="hours"]:after, 
+  .clock div[data-value*="minutes"]:after, 
+  .clock div[data-value*="seconds"]:after {
+      display:block;
+      font-size:.75rem;
+      margin-top:.25rem;
+      font-weight: 300;
+      color:#888;
+  }
+  .clock div[data-value*="days"]:after {
+      content:"Days"
+  }
+  .clock div[data-value*="hours"]:after {
+      content:"Hours"
+  }
+  .clock div[data-value*="minutes"]:after {
+      content:"Minutes"
+  }
+  .clock div[data-value*="seconds"]:after {
+      content:"Seconds"
+  }
+
+@media screen and (max-width: 736px) {
+  .clock {
+      max-width:100%;
+      margin: -20px auto 10px;
+  }
+  .clock div {
+          font-size: 1.5rem;
+  }
+  .clock div[data-value*="days"]:after,
+  .clock div[data-value*="hours"]:after,
+  .clock div[data-value*="minutes"]:after,
+  .clock div[data-value*="seconds"]:after {
+          font-size:.7rem;
+  }
+}

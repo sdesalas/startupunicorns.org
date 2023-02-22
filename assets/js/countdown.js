@@ -1,5 +1,7 @@
 
 
+
+const targetDate = new Date("2023-03-26T18:00:00.000Z");
 class CountdownTimer {
   // setup timer values
   constructor({ selector, targetDate, backgroundColor = null, foregroundColor = null }) {
@@ -69,10 +71,10 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
   selector: "#clock1",
-  targetDate: new Date("2023-02-26T18:00:00.000Z"),
+  targetDate,
 }).start(); 
 
 const timer2 = new CountdownTimer({
   selector: "#clock2",
-  targetDate: new Date("2023-02-26T18:00:00.000Z"),
+  targetDate,
 }).start(); 

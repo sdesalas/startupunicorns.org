@@ -87,7 +87,7 @@ input, select, textarea {
 			min-width: 300px;
 		}
 
-    img.large {
+    html img.large {
       max-width: 260px;
     }
 

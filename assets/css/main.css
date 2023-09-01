@@ -2272,6 +2272,22 @@ input, select, textarea {
 
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
+      color: #0f548f;
+		}
+
+		.icon.brands.fa-reddit:before {
+			font-family: 'Font Awesome 5 Brands';
+      color: #d63f09
+		}
+
+		.icon.brands.fa-twitter:before {
+			font-family: 'Font Awesome 5 Brands';
+      color: #3490e0;
+		}
+
+		.icon.brands.fa-kickstarter:before {
+			font-family: 'Font Awesome 5 Brands';
+      color: #29be7e;
 		}
 
 	.icon {

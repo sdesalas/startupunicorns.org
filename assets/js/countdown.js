@@ -1,7 +1,7 @@
 
 
 
-const targetDate = new Date("2023-09-20T11:00:00.000Z");
+const targetDate = new Date("2023-09-20T14:00:00.000Z");
 class CountdownTimer {
   // setup timer values
   constructor({ selector, targetDate, backgroundColor = null, foregroundColor = null }) {
@@ -20,7 +20,8 @@ class CountdownTimer {
   }
 
   getTimeRemaining(endtime) {
-      const total = Date.parse(endtime) - Date.parse(new Date());
+      let total = Date.parse(endtime) - Date.parse(new Date());
+      if (total < 0) total = 0;
       const days = Math.floor(total / (1000 * 60 * 60 * 24));
       const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
       const mins = Math.floor((total / 1000 / 60) % 60);

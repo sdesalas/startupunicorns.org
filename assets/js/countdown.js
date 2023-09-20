@@ -1,7 +1,7 @@
 
 
 
-const targetDate = new Date("2023-09-20T14:00:00.000Z");
+const targetDate = new Date("2023-09-21T14:00:00.000Z");
 class CountdownTimer {
   // setup timer values
   constructor({ selector, targetDate, backgroundColor = null, foregroundColor = null }) {

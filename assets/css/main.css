@@ -3965,6 +3965,7 @@ input, select, textarea {
 			transform: translateY(2em);
 		}
 
+
 	}
 
 /* Main */
@@ -4117,4 +4118,17 @@ input, select, textarea {
 
 .ribbon:after {
   left:100%;
+}
+
+body.is-fullload #header p.ribbon {
+  -moz-transition: opacity 0.5s ease, -moz-transform 1s ease;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 1s ease;
+  -ms-transition: opacity 0.5s ease, -ms-transform 1s ease;
+  transition: opacity 0.5s ease, transform 1s ease;
+  opacity: 1;
+
+}
+
+#header p.ribbon {
+  opacity: 0;
 }

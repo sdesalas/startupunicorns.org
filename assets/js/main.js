@@ -23,6 +23,9 @@
     $window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
+        window.setTimeout(function() {
+          $body.addClass('is-fullload');
+        }, 1000);
 			}, 100);
 		});
 

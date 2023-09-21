@@ -3080,7 +3080,7 @@ input, select, textarea {
 
 		.wrapper.style2 {
 			background-color: #fbfbfb;
-			color: #999999;
+			color: #555;
 		}
 
 			.wrapper.style2 input[type="submit"],
@@ -3256,11 +3256,11 @@ input, select, textarea {
 				}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
-				color: #828282;
+				color: #555;
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #828282;
+				color: #555;
 			}
 
 			.wrapper.style2 blockquote {
@@ -4062,7 +4062,7 @@ input, select, textarea {
 
 
 #mc_embed_signup_scroll {
-  max-width: 360px; margin: 0 auto;
+  max-width: 400px; margin: 0 auto;
 }
 
 #mc_embed_signup_scroll input[type=email] {
@@ -4133,4 +4133,27 @@ body.is-fullload #header p.ribbon {
 
 #header p.ribbon {
   opacity: 0;
+}
+
+form .email-arrow {
+  position: relative;
+  width: 0%;
+}
+
+form .email-arrow img {
+  width: 20px;
+  position: absolute;
+  top: -10px;
+}
+
+@media screen and (min-width: 440px) {
+  form .email-arrow img {
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 738px) {
+  form .email-arrow img {
+    left: -20px;
+  }
 }

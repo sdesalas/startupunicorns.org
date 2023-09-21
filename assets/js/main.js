@@ -51,3 +51,15 @@
 			});
 
 })(jQuery);
+
+// select the target node
+var target = document.getElementById('mce-success-response');
+
+// create an observer instance
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (target.innerHTML === "Thank you for subscribing!") {
+      target.innerHTML = "Thanks for your support!";
+    }
+  });
+}).observe(target, { attributes: true, childList: true, characterData: true });

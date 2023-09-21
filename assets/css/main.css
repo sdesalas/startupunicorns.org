@@ -1089,7 +1089,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
       #header .content {
-        max-width: 340px;
+        max-width: 370px;
       }
 
 			.row {

@@ -1088,6 +1088,10 @@ input, select, textarea {
 
 		@media screen and (max-width: 980px) {
 
+      #header .content {
+        max-width: 340px;
+      }
+
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -3274,7 +3278,7 @@ input, select, textarea {
 
 		.wrapper.style3 {
 			background-color: #f7f7f7;
-			color: #999999;
+			color: #666;
 		}
 
 			.wrapper.style3 input[type="submit"],
@@ -3791,7 +3795,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 736px) {
 
 			#header {
 				height: auto;
@@ -3808,7 +3812,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 980px) and (orientation: portrait) {
+		@media screen and (max-width: 736px) and (orientation: portrait) {
 
 			#header {
 				padding: 6em 3em 4em 3em ;

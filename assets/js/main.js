@@ -52,14 +52,16 @@
 
 })(jQuery);
 
-// select the target node
 var target = document.getElementById('mce-success-response');
 
 // create an observer instance
-var observer = new MutationObserver(function(mutations) {
+new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     if (target.innerHTML === "Thank you for subscribing!") {
       target.innerHTML = "Thanks for your support!";
+    }
+    if (target.innerHTML === "You're already subscribed, your profile has been updated. Thank you!") {
+      target.innerHTML = "We already have your email. Thanks!";
     }
   });
 }).observe(target, { attributes: true, childList: true, characterData: true });

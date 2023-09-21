@@ -4137,24 +4137,20 @@ body.is-fullload #header p.ribbon {
 
 form .email-arrow {
   position: relative;
-  width: 0%;
+  width: 260px;
+  height: 1px;
+  margin: auto;
 }
 
 form .email-arrow img {
-  width: 20px;
+  width: 25px;
   position: absolute;
   top: -10px;
-  left: 10px;
+  left: -10px;
 }
 
-@media screen and (min-width: 440px) {
-  form .email-arrow img {
-    width: 40px;
-  }
-}
-
-@media screen and (min-width: 738px) {
-  form .email-arrow img {
-    left: -20px;
+@media screen and (min-width: 736px) {
+  form .email-arrow {
+    width: 330px;
   }
 }

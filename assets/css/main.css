@@ -3543,6 +3543,7 @@ input, select, textarea {
 		background-size: auto, cover;
 		height: 100vh;
 		min-height: 35em;
+    overflow: hidden;
 	}
 
 		#header input[type="submit"],

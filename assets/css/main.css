@@ -3639,27 +3639,27 @@ input, select, textarea {
 		}
 
 		#header ::-webkit-input-placeholder {
-			color: #b5d5f5 !important;
+			color: #ccc !important;
 		}
 
 		#header :-moz-placeholder {
-			color: #b5d5f5 !important;
+			color: #ccc !important;
 		}
 
 		#header ::-moz-placeholder {
-			color: #b5d5f5 !important;
+			color: #ccc !important;
 		}
 
 		#header :-ms-input-placeholder {
-			color: #b5d5f5 !important;
+			color: #ccc !important;
 		}
 
 		#header .formerize-placeholder {
-			color: #b5d5f5 !important;
+			color: #ccc !important;
 		}
 
 		#header .icon {
-			color: #b5d5f5;
+			color: #ccc;
 		}
 
 		#header .image {
@@ -4073,6 +4073,14 @@ input, select, textarea {
 
 #mc_embed_signup_scroll input[type=submit] {
   padding: 0 1em;
+  height: 2.7em;
+  line-height: 2.7em;
+  background-color: #03a781;
+}
+
+#mc_embed_signup_scroll input[type=submit]:hover {
+  background-color: #03a781 !important;
+  color: #fff !important;
 }
 
 
@@ -4159,4 +4167,11 @@ form .email-arrow img {
 
 #signup blockquote {
   background-color: white;
+}
+
+#signup ol {
+  max-width: 340px;
+  text-align: left;
+  margin: -10px auto 20px;
+  padding: 0 1em 0 2em;
 }

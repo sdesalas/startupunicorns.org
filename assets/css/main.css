@@ -4156,3 +4156,7 @@ form .email-arrow img {
     width: 330px;
   }
 }
+
+#signup blockquote {
+  background-color: white;
+}

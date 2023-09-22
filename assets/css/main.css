@@ -4064,7 +4064,7 @@ input, select, textarea {
 
 
 #mc_embed_signup_scroll {
-  max-width: 400px; margin: 0 auto;
+  max-width: 400px; margin: 0 0 0 auto;
 }
 
 #mc_embed_signup_scroll input[type=email] {
@@ -4083,6 +4083,9 @@ input, select, textarea {
   color: #fff !important;
 }
 
+#header #mc_embed_signup_scroll .response {
+  text-align: center;
+}
 
 @media screen and (max-width: 736px) {
   #mc_embed_signup_scroll input[type=submit] {

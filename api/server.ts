@@ -49,9 +49,15 @@ const getStats = async () => {
   return stats;
 };
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': '*',
+  'Access-Control-Allow-Headers': '*',
+};
+
 const handler = async (request: Request): Promise<Response> => {
   const {member_count, last_sub_date} = await getStats();
-  return new Response(JSON.stringify({member_count, last_sub_date}), { status: 200 });
+  return new Response(JSON.stringify({member_count, last_sub_date}), { headers, status: 200 });
 };
 
 console.log(`HTTP server running. Access it at: http://localhost:${port}/`);

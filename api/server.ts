@@ -4,24 +4,35 @@ import { load } from 'https://deno.land/std@0.202.0/dotenv/mod.ts';
 import { encode as base64 } from 'https://deno.land/std@0.82.0/encoding/base64.ts';
 import cache from './memory-cache.js';
 
-const env = await load();
 const port = 5000;
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 
-console.log('Startin 🦕 deno...');
-console.log('MAILCHIMP_SERVER=', env.MAILCHIMP_SERVER);
-console.log('MAILCHIMP_API_KEY=', env.MAILCHIMP_API_KEY);
-console.log('MAILCHIMP_LIST_ID=', env.MAILCHIMP_LIST_ID);
 
-const auth = 'Basic ' + base64(`user:${env.MAILCHIMP_API_KEY}`);
+type Config = {
+  [id: string]: string;
+}
+const dotenv = await load();
+const config: Config = {};
+
+for (const variable of ['MAILCHIMP_SERVER', 'MAILCHIMP_API_KEY', 'MAILCHIMP_LIST_ID']) {
+  // @ts-ignore
+  config[variable] = Deno.env.get(variable) ?? dotenv[variable];
+}
+
+console.log('Startin 🦕 deno...');
+console.log('MAILCHIMP_SERVER=', config.MAILCHIMP_SERVER);
+console.log('MAILCHIMP_API_KEY=', config.MAILCHIMP_API_KEY);
+console.log('MAILCHIMP_LIST_ID=', config.MAILCHIMP_LIST_ID);
+
+const auth = 'Basic ' + base64(`user:${config.MAILCHIMP_API_KEY}`);
 
 console.log('auth=', auth);
 
 cache.put('foo', 'bar');
 
 const getStats = async () => {
-  const url = `https://${env.MAILCHIMP_SERVER}.api.mailchimp.com/3.0/lists/${env.MAILCHIMP_LIST_ID}?fields=id,name,stats`;
+  const url = `https://${config.MAILCHIMP_SERVER}.api.mailchimp.com/3.0/lists/${config.MAILCHIMP_LIST_ID}?fields=id,name,stats`;
   const cached = cache.get(url);
   if (cached) return cached;
 
@@ -43,7 +54,7 @@ const handler = async (request: Request): Promise<Response> => {
   return new Response(JSON.stringify({member_count, last_sub_date}), { status: 200 });
 };
 
-console.log(`HTTP server running. Access it at: http://localhost:8080/`);
+console.log(`HTTP server running. Access it at: http://localhost:${port}/`);
 
 // @ts-ignore
 Deno.serve({ port }, handler);

@@ -32,15 +32,40 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<link rel="stylesheet" href="/assets/css/countdown.css" />
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+    <style>
+      #progress { 
+        -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+        -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+        -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+        transition: opacity 1s ease, transform 1s ease;
+        opacity: 0;
+        display: inline-block;
+        text-align: center;
+      }
+      #progress.displayed {
+        opacity: 1;
+      }
+      #progressbar {display: flex; width: 300px; margin: 0 auto; border-radius: 1em; background-color: rgba(0, 0, 0, 0.15);}
+      #progresspercent {width: 5%; border-radius: 1em; background-color: #03a781;}
+      #progresswording {color: #666; flex-grow: 1; line-height: 1.2em; height: 1.2em; font-size: 80%; font-weight: bold; text-shadow: 0 1px white;}
+      #header { max-height: 520px; position: relative; overflow: hidden; border-bottom: 2px solid #ddd;}
+    </style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header --> 
-    <header id="header" style="max-height: 460px; position: relative; overflow: hidden; border-bottom: 2px solid #ddd;">
+    <header id="header">
       <p class="ribbon" style="font-size:80%;">COMING SOON!</p>
       <div class="content">
-        <h1><a href="#">STARTUP UNICORNS</a></h1>
-        <p>The card game for future founders.</p> 
+        <h1><a href="#">STARTUP UNICORNS!</a></h1>
+        <p>The card game for future founders.</p>
+        <div id="progress">
+          <div id="progressbar">
+            <div id="progresspercent"></div>
+            <div id="progresswording"><span id="progresscount">17</span> / <span id="progresstarget">2000</span> subscribed</div>
+          </div>
+          <p style="line-height: 2em; opacity: 0.6; font-size: 70%;">Last person <span id="progresstimeago">8 minutes ago</span>..</p>
+        </div>
         <ul class="actions">
           <!-- <li><button class="button primary icon solid fa-rocket" disabled="disabled">Back the campaign</button></li> -->
           <!-- <li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li> -->
@@ -148,6 +173,37 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
+      <script src="/assets/js/timeago.min.js"></script>
       <script data-goatcounter="https://startupunicorns.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	</body>
+  <script>
+    var el = window.el = window.el || {
+      progress: document.getElementById('progress'),
+      progressbar: document.getElementById('progressbar'),
+      progresspercent: document.getElementById('progresspercent'),
+      progresscount: document.getElementById('progresscount'),
+      progresstarget: document.getElementById('progresstarget'),
+      progresstimeago: document.getElementById('progresstimeago'),
+    };
+    // Progress!
+    (function () {
+      const target = 2000;
+      (async () => {
+        const res = await fetch('https://startupunicorns-api.deno.dev/stats');
+        const stats = await res.json();
+        const count = stats && stats.member_count;
+        const sub_date = stats && stats.last_sub_date;
+        if (count) {
+          let percent = Math.ceil(count/target*100);
+          if (percent < 5) percent = 5;
+          console.log('We have a percent', percent);
+          el.progresscount.innerText = count;
+          el.progresstarget.innerText = target;
+          el.progresspercent.style.width = `${percent}%`;
+          // el.progress.classList.toggle('displayed');
+          el.progresstimeago.innerText = timeago().format(sub_date);
+        }
+      })();
+    })();
+  </script>
 </html>

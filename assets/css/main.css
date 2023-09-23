@@ -2485,7 +2485,7 @@ input, select, textarea {
 				width: 100%;
 			}
 
-		@media screen and (max-width: 580px) {
+		@media screen and (max-width: 720px) {
 
 			ul.actions:not(.fixed) {
 				-moz-flex-direction: column;
@@ -4102,16 +4102,7 @@ input, select, textarea {
 
 }
 
-.parent {
-  overflow: hidden; /* required */
-  width: 50%; /* for demo only */
-  height: 250px /* some non-zero number */;
-  margin: 25px auto; /* for demo only */
-  border:1px solid grey; /* for demo only */
-  position: relative; /* required  for demo*/
-}
-
-.ribbon {
+p.ribbon {
   margin: 0;
   padding: 0;
   background: #bbb;
@@ -4123,8 +4114,8 @@ input, select, textarea {
   transform: translateX(30%) translateY(0%) rotate(45deg);
   transform-origin: top left;
 }
-.ribbon:before,
-.ribbon:after {
+p.ribbon:before,
+p.ribbon:after {
   content: '';
   position: absolute;
   top:0;
@@ -4133,12 +4124,18 @@ input, select, textarea {
   height: 100%;
   background: #bbb;
 }
-.ribbon:before {
+p.ribbon:before {
   right:100%;
 }
 
-.ribbon:after {
+p.ribbon:after {
   left:100%;
+}
+
+img.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 body.is-fullload #header p.ribbon {

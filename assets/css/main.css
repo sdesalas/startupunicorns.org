@@ -1089,7 +1089,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
       #header .content {
-        max-width: 380px;
+        max-width: 370px;
       }
 
 			.row {
@@ -3264,7 +3264,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style2 blockquote {
-				border-left-color: #e6e6e6;
+				border-left-color: #999;
 			}
 
 			.wrapper.style2 code {
@@ -3462,9 +3462,10 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 blockquote {
-				border-left-color: #d6d6d6;
-        max-width: 980px;
-        margin: 0 auto 2em;
+				border-left-color: #999;
+        background-color: white;
+        max-width: 600px;
+        margin: 0 auto 20px;
 			}
 
 			.wrapper.style3 code {
@@ -3728,7 +3729,7 @@ input, select, textarea {
 		#header h1 {
 			font-size: 3.25em;
 			font-weight: bold;
-			margin-bottom: 0.5em;
+			margin-bottom: 0.3em;
 		}
 
 		#header p {
@@ -4178,3 +4179,20 @@ form .email-arrow img {
   margin: -10px auto 20px;
   padding: 0 1em 0 2em;
 }
+
+#rewards img {
+  max-width: 600px;
+}
+
+@media screen and (max-width: 736px) {
+  #rewards img {
+    width: 100%;
+    max-width: fit-content;
+  }
+}
+
+#header form {
+  margin-bottom: 0px;
+}
+
+#header .madewithlove { font-size: 100%; margin-bottom: 3em; margin-top: 0.5em }

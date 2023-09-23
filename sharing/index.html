@@ -58,7 +58,7 @@
       <p class="ribbon" style="font-size:80%;">COMING SOON!</p>
       <div class="content">
         <h1><a href="#">STARTUP UNICORNS!</a></h1>
-        <p>The card game for future founders.</p>
+        <p style="margin-bottom: 10px">The card game for future founders.</p> 
         <div id="progress">
           <div id="progressbar">
             <div id="progresspercent"></div>
@@ -83,9 +83,9 @@
           <!-- <div><img class="large" src="/images/3d.twoboxes.png" alt="" style="width: 360px; margin: -1em 0 2em"/></div> -->
           <div><img class="large" src="/images/needyourhelp.png" alt="" style="width: 240px; margin-top: -1em"/></div>
         </div>
-        <p>We want this game to go out to <b><u>as many people as possible</u></b>. 
+        <p>We want <b><u>as many people as possible</u></b> to enjoy this game. 
           But in order to do that,
-          the first day of our project launch <b><u>has to be successful.</u></b>.</p>
+          the first day of our Kickstarter launch <b><u>has to be successful</u></b>. To beat the ranking algorithm.</p>
         <p>You can help us by telling your friends, for example by copying the text below and sharing out to your friends and family.</p>
         
         <ul class="actions" style="display:block; width: 200px; margin: -1em auto 2em ;">
@@ -95,13 +95,19 @@
           Hi guys! A friend of mine is putting together a crowdfunding campaign for an educational game about tech startups. If you're interested follow him on social media, or sign up for an early bird discount. Thanks!!
         </blockquote>
         <blockquote>
-          Hola! Un amigo mio esta haciendo un crowdfunding para un juego educativo de emprendimento tecnologico. Si estais interesados seguir la pagina o inscribiros para un descuento el dia del lanzamiento. Gracias!
+          ¡Hola! Un amigo mío está haciendo un crowdfunding para un juego educativo de emprendimiento tecnológico. Si estais interesados seguir la página o inscribiros para un descuento el día del lanzamiento. ¡Gracias!
         </blockquote>
         <ul class="actions" style="display:block; max-width: 320px; margin: -1em auto 2em; line-height: 4em;">
           <li><a href="https://www.facebook.com/startupunicornsgame" class="button primary icon solid fa-link">Link for Facebook</a></li>
           <li><a href="https://twitter.com/StartupUnicornz" class="button primary icon solid fa-link">Link for Twitter</a></li>
           <li><a href="https://www.linkedin.com/company/startup-unicorns" class="button primary icon solid fa-link">Link for LinkedIn</a></li>
         </ul>
+        <blockquote>
+          Hiya! I just heard about this crowdfunded card game about tech startups and founders. If you're interested check it out on social media, or sign up for a discount. Thanks!!
+        </blockquote>
+        <blockquote>
+          ¡Hola! Acabo de enterarme de un crowdfunding sobre un juego de startups y emprendedores. Si estáis interesados seguir la página, o inscribiros para un descuento el día del lanzamiento. ¡Gracias!
+        </blockquote>
         <p>
           <a target="_blank" src="https://www.facebook.com/photo.php?fbid=272132469074587&set=a.258892170398617&type=3&mibextid=rS40aB7S9Ucbxw6v" style="cursor: pointer;">
             <img src="/images/sharing.lightbluebg.jpg" alt="" class="large" style="width: 420px;">
@@ -125,6 +131,7 @@
 				<header>
           <!-- <div><img class="large" src="/images/3d.twoboxes.png" alt="" style="width: 360px; margin: -1em 0 2em"/></div> -->
           <div><img src="/images/conversation.png" alt="" style="width: 80px; margin: 20px;"/></div>
+          <h2>Find out more.</h2>
 					<p>Check out the community.</p>
           <!-- <div><img class="large" src="/images/3d.twoboxes.png" alt="" style="width: 360px; margin: -1em 0 2em"/></div> -->
 				</header>
@@ -200,7 +207,7 @@
           el.progresscount.innerText = count;
           el.progresstarget.innerText = target;
           el.progresspercent.style.width = `${percent}%`;
-          // el.progress.classList.toggle('displayed');
+          el.progress.classList.toggle('displayed');
           el.progresstimeago.innerText = timeago().format(sub_date);
         }
       })();

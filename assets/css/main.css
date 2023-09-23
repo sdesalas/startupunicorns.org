@@ -2294,6 +2294,11 @@ input, select, textarea {
       color: #29be7e;
 		}
 
+    .icon.brands.fa-chess-queen:before {
+      font-family: 'Font Awesome 5 Free';
+      color: #ff5100;
+    }
+
 	.icon {
 		color: #808080;
 	}
@@ -4196,3 +4201,7 @@ form .email-arrow img {
 }
 
 #header .madewithlove { font-size: 100%; margin-bottom: 3em; margin-top: 0.5em }
+
+#socialmedia .icon.brands {
+  background-color: #fff;
+}

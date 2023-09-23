@@ -4,9 +4,10 @@ import { load } from 'https://deno.land/std@0.202.0/dotenv/mod.ts';
 import { encode as base64 } from 'https://deno.land/std@0.82.0/encoding/base64.ts';
 import cache from './memory-cache.js';
 
-const port = 5000;
+const PORT = 5000;
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
+const CACHE_DURATION = 2*MINUTE;
 
 
 type Config = {
@@ -44,8 +45,8 @@ const getStats = async () => {
   const data = await response.json();
   const stats = data?.stats;
 
-  // Use a 5 minute cache and return
-  cache.put(url, stats, 5*MINUTE);
+  // Use cache and return
+  cache.put(url, stats, CACHE_DURATION);
   return stats;
 };
 
@@ -60,8 +61,8 @@ const handler = async (request: Request): Promise<Response> => {
   return new Response(JSON.stringify({member_count, last_sub_date}), { headers, status: 200 });
 };
 
-console.log(`HTTP server running. Access it at: http://localhost:${port}/`);
+console.log(`HTTP server running. Access it at: http://localhost:${PORT}/`);
 
 // @ts-ignore
-Deno.serve({ port }, handler);
+Deno.serve({ port: PORT }, handler);
 

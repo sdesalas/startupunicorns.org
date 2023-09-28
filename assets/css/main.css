@@ -4224,6 +4224,8 @@ form .email-arrow img {
 
 .language-toggle a img {
   width: 32px;
+  height: 32px;
+  background: #999;
   border-radius: 50%;
   border: 2px solid white;
 }

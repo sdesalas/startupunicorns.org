@@ -31,26 +31,11 @@
     <!-- css -->
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<link rel="stylesheet" href="/assets/css/countdown.css" />
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="/assets/css/progress.css" />
     <style>
-      #progress { 
-        -moz-transition: opacity 1s ease, -moz-transform 1s ease;
-        -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-        -ms-transition: opacity 1s ease, -ms-transform 1s ease;
-        transition: opacity 1s ease, transform 1s ease;
-        opacity: 0;
-        display: inline-block;
-        text-align: center;
-      }
-      #progress.displayed {
-        opacity: 1;
-      }
-      #progressbar {position: relative; width: 300px; margin: 0 auto; border-radius: 1em; background-color: rgba(0, 0, 0, 0.15);}
-      #progresspercent {height: 1em; width: 5%; border-radius: 1em; background-color: #03a781;}
-      #progresswording {color: #666; flex-grow: 1; line-height: 1.2em; height: 1.2em; font-size: 80%; font-weight: bold; text-shadow: 0 1px white;}
-      #progresswording {position: absolute; top: 0; right: 50%; transform: translateX(50%);}
       #header { max-height: 520px; position: relative; overflow: hidden; border-bottom: 2px solid #ddd;}
     </style>
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -185,36 +170,7 @@
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
       <script src="/assets/js/timeago.min.js"></script>
+      <script src="/assets/js/progress.js"></script>
       <script data-goatcounter="https://startupunicorns.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	</body>
-  <script>
-    var el = window.el = window.el || {
-      progress: document.getElementById('progress'),
-      progressbar: document.getElementById('progressbar'),
-      progresspercent: document.getElementById('progresspercent'),
-      progresscount: document.getElementById('progresscount'),
-      progresstarget: document.getElementById('progresstarget'),
-      progresstimeago: document.getElementById('progresstimeago'),
-    };
-    // Progress!
-    (function () {
-      const target = 1000;
-      (async () => {
-        const res = await fetch('https://startupunicorns-api.deno.dev/stats');
-        const stats = await res.json();
-        const count = stats && stats.member_count;
-        const sub_date = stats && stats.last_sub_date;
-        if (count) {
-          let percent = Math.ceil(count/target*100);
-          if (percent < 5) percent = 5;
-          console.log('We have a percent', percent);
-          el.progresscount.innerText = count;
-          el.progresstarget.innerText = target;
-          el.progresspercent.style.width = `${percent}%`;
-          el.progress.classList.toggle('displayed');
-          el.progresstimeago.innerText = timeago().format(sub_date);
-        }
-      })();
-    })();
-  </script>
 </html>

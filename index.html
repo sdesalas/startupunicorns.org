@@ -31,6 +31,7 @@
     <!-- css -->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/countdown.css" />
+		<link rel="stylesheet" href="assets/css/progress.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <!-- Meta Pixel Code -->
     <script>
@@ -52,6 +53,11 @@
 
 		<!-- Header --> 
     <header id="header" style="position: relative; overflow: hidden; border-bottom: 2px solid #ddd;">
+      <div class="language-toggle">
+        <ul>
+          <li><a href="/es"><img src="/images/flag.en.png"></a></li>
+        </ul>
+      </div>
       <!-- <p class="ribbon" style="font-size:80%;">COMING SOON!</p> -->
       <a target="_blank" href="https://www.kickstarter.com/projects/sdesalas/startup-unicorns" data-goatcounter-click="kickstarter-ribbon-click" data-goatcounter-title="kickstarter-ribbon-click">
         <img class="ribbon" src="images/ribbon.kickstarter.png" style="width:120px;"/>
@@ -112,7 +118,7 @@
           Play your cards right and turn your startup into a unicorn!
           Running a startup has never been so much fun!
         </blockquote>
-        <p><a href="https://www.kickstarter.com/projects/sdesalas/startup-unicorns"  data-goatcounter-click="kickstarter-button-click" data-goatcounter-title="kickstarter-button-click"class="button primary icon solid" style="background-color: #03a781; min-width: 200px">Pre-launch page</a></p> 
+        <p><a href="https://www.kickstarter.com/projects/sdesalas/startup-unicorns"  data-goatcounter-click="kickstarter-button-click" data-goatcounter-title="kickstarter-button-click"class="button primary icon solid" style="background-color: #03a781; min-width: 200px">Open in Kickstarter</a></p> 
       </section>
 
       <!-- Singup (w mailchimp) -->
@@ -126,23 +132,28 @@
           <p>We want <b><u>as many people as possible</u></b> to enjoy this game. 
             But in order to do that,
             the first day of our Kickstarter launch <b><u>has to be successful</u></b>. So we can rank high enough for people to see it.</p>
+            <div id="progress">
+              <div id="progressbar">
+                <div id="progresspercent"></div>
+                <div id="progresswording"><span id="progresscount">17</span> / <span id="progresstarget">1000</span> subscribed</div>
+              </div>
+              <p style="line-height: 2em; opacity: 0.6; font-size: 70%;">Last person <span id="progresstimeago">8 minutes ago</span>..</p>
+            </div>
           <p>Please <b><u>add your email</u></b> if you'd like to support this project. Once it goes live, we'll notify you. </p>
         </header>
         <p>You can then help us by:</p>
         <ol>
           <li>Opening the Kickstarter link.</li>
           <li>Sharing it with your friends and family.</li>
-          <li>Getting your "Early Bird" copy.<br/><i>&nbsp;(20% off, limited stock!)</i></li>
+          <li>Getting your "Early Bird" copy.<br/><i>&nbsp;(🔥 20% off, limited stock!)</i></li>
         </ol>
         <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js' defer></script>
         <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
       </section>
 
       <section id="rewards" class="wrapper style2 special">
-        <h2 style="font-size: 180%">Reward Tiers</h4>
+        <h2 style="font-size: 180%">Rewards</h4>
         <p><img class="large" src="images/reward.tiers.wide.basicset.jpg" /></p>
-        <p><img class="large" src="images/reward.tiers.wide.sponsorset.jpg" /></p>
-        <p style="font-size: 80%">PLEASE NOTE. We're still getting a few quotes for shipping/manufacturing so the rewards amounts are not final.</p>
       </section>
 
 
@@ -608,6 +619,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/countdown.js"></script>
+      <script src="/assets/js/timeago.min.js"></script>
+      <script src="/assets/js/progress.js"></script>
       <script data-goatcounter="https://startupunicorns.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	</body>
 </html>

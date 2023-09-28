@@ -1,0 +1,20 @@
+
+#progress { 
+  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
+  display: inline-block;
+  text-align: center;
+}
+#progress.displayed {
+  opacity: 1;
+}
+#progressbar {position: relative; width: 300px; margin: 0 auto; border-radius: 1em; background-color: rgba(0, 0, 0, 0.15);}
+#progresspercent {height: 1em; width: 5%; border-radius: 1em; background-color: #03a781;}
+#progresswording {color: #666; flex-grow: 1; line-height: 1.2em; height: 1.2em; font-size: 80%; font-weight: bold; text-shadow: 0 1px white;}
+#progresswording {position: absolute; top: 0; right: 50%; transform: translateX(50%);}
+@media screen and (max-width: 340px) {
+  #progressbar { width: 280px; }
+}

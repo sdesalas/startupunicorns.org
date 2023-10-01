@@ -7,7 +7,7 @@ import cache from './memory-cache.js';
 const PORT = 5000;
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
-const CACHE_DURATION = 2*MINUTE;
+const CACHE_DURATION = 1*MINUTE;
 
 
 type Config = {

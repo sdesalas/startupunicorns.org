@@ -2289,6 +2289,11 @@ input, select, textarea {
       color: #3490e0;
 		}
 
+		.icon.brands.fa-instagram:before {
+			font-family: 'Font Awesome 5 Brands';
+      color: #c11476;
+		}
+
 		.icon.brands.fa-kickstarter:before {
 			font-family: 'Font Awesome 5 Brands';
       color: #29be7e;
@@ -2546,7 +2551,7 @@ input, select, textarea {
 
 		ul.icons li {
 			display: inline-block;
-			padding: 0 1.5em 0 0;
+			padding: 0 1.4em 0 0;
 		}
 
 			ul.icons li:last-child {

@@ -70,10 +70,10 @@ class CountdownTimer {
   }
 }
 
-const timer = new CountdownTimer({
-  selector: "#clock1",
-  targetDate,
-}).start(); 
+// const timer = new CountdownTimer({
+//   selector: "#clock1",
+//   targetDate,
+// }).start(); 
 
 const timer2 = new CountdownTimer({
   selector: "#clock2",

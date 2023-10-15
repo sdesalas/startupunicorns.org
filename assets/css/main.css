@@ -1928,6 +1928,11 @@ input, select, textarea {
 			opacity: 0.25;
 		}
 
+    a[disabled] {
+			pointer-events: none;
+			cursor: default;
+    }
+
 		@media screen and (max-width: 480px) {
 
 			input[type="submit"].icon,

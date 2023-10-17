@@ -8,6 +8,7 @@ var el = window.el = window.el || {
 };
 // Progress!
 (function () {
+  if (!el.progress) return;
   const target = 1000;
   (async () => {
     const res = await fetch('https://startupunicorns-api.deno.dev/stats');

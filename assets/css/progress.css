@@ -18,3 +18,16 @@
 @media screen and (max-width: 340px) {
   #progressbar { width: 280px; }
 }
+
+p#progressemail {
+  font-size: 10pt;
+  color: #999;
+  margin-top: 1em;
+  margin-left: auto;
+  max-width: 360px;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+p#progressemail.displayed {
+  opacity: 1;
+}

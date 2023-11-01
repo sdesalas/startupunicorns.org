@@ -3775,11 +3775,11 @@ input, select, textarea {
       -ms-transform: translateY(2em);
       transform: translateY(2em);
 			opacity: 1;
-      padding: 8em 0 3em 0;
+      padding: 4em 0 3em 0;
 		}
 
 			#header .image img {
-        width: 180px;
+        width: 140px;
 				-moz-transition: opacity 0.5s ease;
 				-webkit-transition: opacity 0.5s ease;
 				-ms-transition: opacity 0.5s ease;
@@ -3836,7 +3836,6 @@ input, select, textarea {
 
 			#header {
 				background-image: url("images/overlay.png"), url("images/pattern-size3.svg");
-        padding-bottom: 3em !important;
 			}
 
 				#header p {

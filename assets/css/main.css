@@ -4254,3 +4254,12 @@ form .email-arrow img {
 .sidequote em {
   color: #555;
 }
+p.caption {
+  margin: -2em auto 2em;
+  max-width: 400px;
+  font-size: 86%;
+}
+
+.wrapper.style2 a:has(img) {
+  border-bottom-color: transparent;
+}

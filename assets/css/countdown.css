@@ -2,7 +2,7 @@
 .clock {
   display: block;
   margin: -20px 0 10px auto;
-  width: 250px;
+  width: 270px;
   padding: 5px;
   border-radius: 5px;
 }
@@ -16,6 +16,7 @@
       font-weight: bold;
       border-radius: 50%;
   }
+  .clock div[data-value*="months"]:after, 
   .clock div[data-value*="days"]:after, 
   .clock div[data-value*="hours"]:after, 
   .clock div[data-value*="minutes"]:after, 
@@ -25,6 +26,9 @@
       margin-top:.25rem;
       font-weight: 300;
       color:#888;
+  }
+  .clock div[data-value*="months"]:after {
+    content:"Months"
   }
   .clock div[data-value*="days"]:after {
       content:"Days"
@@ -47,6 +51,7 @@
   .clock div {
           font-size: 1.5rem;
   }
+  .clock div[data-value*="months"]:after,
   .clock div[data-value*="days"]:after,
   .clock div[data-value*="hours"]:after,
   .clock div[data-value*="minutes"]:after,

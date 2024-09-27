@@ -1,7 +1,7 @@
 
 
 
-const targetDate = new Date("2024-01-15T14:00:00.000Z");
+const targetDate = new Date("2025-02-20T14:00:00.000Z");
 class CountdownTimer {
   // setup timer values
   constructor({ selector, targetDate, backgroundColor = null, foregroundColor = null }) {
@@ -12,6 +12,7 @@ class CountdownTimer {
 
       // grab divs on frontend using supplied selector ID
       this.refs = {
+          months: document.querySelector(`${this.selector} [data-value="months"]`),
           days: document.querySelector(`${this.selector} [data-value="days"]`),
           hours: document.querySelector(`${this.selector} [data-value="hours"]`),
           mins: document.querySelector(`${this.selector} [data-value="minutes"]`),
@@ -22,12 +23,14 @@ class CountdownTimer {
   getTimeRemaining(endtime) {
       let total = Date.parse(endtime) - Date.parse(new Date());
       if (total < 0) total = 0;
-      const days = Math.floor(total / (1000 * 60 * 60 * 24));
+      const months = Math.floor(total / (1000 * 60 * 60 * 24 * 30));
+      const days = Math.floor(total / (1000 * 60 * 60 * 24) % 7);
       const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
       const mins = Math.floor((total / 1000 / 60) % 60);
       const secs = Math.floor((total / 1000) % 60);
       return {
           total,
+          months,
           days,
           hours,
           mins,
@@ -35,7 +38,8 @@ class CountdownTimer {
       };
   }
 
-  updateTimer({ days, hours, mins, secs }) {
+  updateTimer({ months, days, hours, mins, secs }) {
+      this.refs.months.textContent = months;
       this.refs.days.textContent = days;
       this.refs.hours.textContent = hours;
       this.refs.mins.textContent = mins;
@@ -44,6 +48,7 @@ class CountdownTimer {
 
   updateColors() {
       if (this.backgroundColor != null) {
+          this.refs.months.style.background = this.backgroundColor;
           this.refs.days.style.background = this.backgroundColor;
           this.refs.hours.style.background = this.backgroundColor;
           this.refs.mins.style.background = this.backgroundColor;
@@ -51,6 +56,7 @@ class CountdownTimer {
       }
 
       if (this.foregroundColor != null) {
+          this.refs.months.style.color = this.foregroundColor;
           this.refs.days.style.color = this.foregroundColor;
           this.refs.hours.style.color = this.foregroundColor;
           this.refs.mins.style.color = this.foregroundColor;

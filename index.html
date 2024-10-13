@@ -192,13 +192,15 @@
       </section> -->
 
 			<section id="video" class="wrapper style3" style="padding: 3em 0;">
-        <video controls autoplay loop 
-        poster="/images/video.preview.jpg" 
-        src="/video/promo.720p.mp4"
-        onplay="goatcounter.count({ path: 'video-play', event: true });"
-        style="width: 100%; max-width: 400px; max-height: 80vh; margin: 0 auto; display: block;"/>
+        <video controls autoplay loop muted
+          poster="/images/video.preview.jpg" 
+          src="/video/promo.720p.mp4"
+          onplay="goatcounter.count({ path: 'video-play', event: true });"
+          style="width: 100%; max-width: 400px; max-height: 80vh; margin: 0 auto; display: block;"
+          onmouseover="this.muted=false; this.play();"
+          ontouchend="if (!this.touched) {this.muted=false}; this.touched=true;"/>
       </section>
-      
+
 		<!-- Three -->
     <section id="socialmedia" class="wrapper style2 special">
       <header>

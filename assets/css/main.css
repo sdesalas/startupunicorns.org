@@ -2454,6 +2454,10 @@ input, select, textarea {
 			ul.actions.special li:first-child {
 				padding-left: 0;
 			}
+    
+    ul.actions.call-to-action {
+      font-size: 110%;
+    }
 
 		ul.actions.stacked {
 			-moz-flex-direction: column;
